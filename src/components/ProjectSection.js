@@ -2,7 +2,6 @@ import React from 'react';
 import Project from './Project';
 
 const ProjectSection = ({imageMap}) => {
-    console.log(imageMap["learnwars.png"])
     return (
         <section style={{width:`calc(100vw - (100vw - 100%))`, minHeight:`100vh`, background:`white`, paddingTop:`80px`}}>
             <div className="container">

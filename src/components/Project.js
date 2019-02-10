@@ -4,7 +4,6 @@ import Fade from 'react-reveal/Fade'
 import Img from 'gatsby-image'
 
 const Project = ({left, title, info, skills, weblink, githublink, fluid}) => {
-    console.log(fluid)
     if(left) {
         return (
             <div className="row" style={{marginTop:120}}>

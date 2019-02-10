@@ -10,7 +10,7 @@ const Project = ({left, title, info, skills, weblink, githublink, fluid}) => {
                 <Fade left>
                     <div className={`col s12 m12 l6 left`}>
                         {/* <img src={require(`../images/${title}.png`)} alt={title} className="responsive-img"/> */}
-                        <Img fluid={fluid} style={{marginBottom:10}}/>
+                        <Img fluid={fluid} style={{marginBottom:10}} alt={`${title}`} title={`${title}`}/>
                     </div>
                 </Fade>
                 <Fade right>
@@ -25,7 +25,7 @@ const Project = ({left, title, info, skills, weblink, githublink, fluid}) => {
             <div className="row" style={{marginTop:100}}>
                 <Fade right>
                     <div className={`col s12 m12 l6 right`}>
-                        <Img fluid={fluid} style={{marginBottom:10}}/> 
+                        <Img fluid={fluid} style={{marginBottom:10}} alt={`${title}`} title={`${title}`}/> 
                         {/* <img src={require(`../images/${title}.png`)} alt={title} className="responsive-img"/> */}
                     </div>
                 </Fade>

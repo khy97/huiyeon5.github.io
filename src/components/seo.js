@@ -36,7 +36,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 property: `og:image`,
-                content: '../images/Huiyeon Kim.jpg',
+                content: require('../images/Huiyeon Kim.jpg'),
               },
               {
                 name: `twitter:card`,

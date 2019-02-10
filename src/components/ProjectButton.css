@@ -1,0 +1,49 @@
+.web {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width:200px;
+    height:50px;
+    background:none; 
+    border:3px solid #396afc;
+    color:#396afc;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.web:hover {
+    color:white;
+    background:#396afc;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap:wrap;
+}
+
+.git {
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    color:#396afc;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.git:after {
+    content: '';
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:0px;
+    border:0px solid #396afc;
+    transition: all 0.3s ease;
+}
+
+.git:hover:after {
+    width:100%;
+    border:1px solid #396afc;
+}

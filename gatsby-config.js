@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Huiyeon Kim - Software Developer | Tech Enthusiast | Writer`,
+    title: `Huiyeon Kim: Software Developer | Tech Enthusiast | Writer`,
     description: `Welcome to my personal portfolio! Come and see who I am, what I did and what I can do. Check out my Contacts section to contact for any enquiries.`,
     author: `@huiyeonkim`,
     siteUrl:`https://huiyeonkim.com`

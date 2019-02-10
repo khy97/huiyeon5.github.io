@@ -7,7 +7,7 @@ import AboutMe from '../components/AboutMe'
 import SkillSection from '../components/SkillSection'
 import ContactMe from '../components/ContactMe'
 import { graphql } from 'gatsby';
-import "../components/layout.css"
+// import "../components/layout.css"
 
 const IndexPage = ({data}) => {
     const imageList = data.allFile.edges;
@@ -16,7 +16,7 @@ const IndexPage = ({data}) => {
         imageMap[image.node.childImageSharp.fluid.originalName] = image.node.childImageSharp.fluid
     })
     return (
-        <div style={{position:`relative`, overflowX:`hidden`}}>
+        <div style={{position:`relative`, overflowY:`hidden`}}>
             <SEO title="Home" keywords={[`Huiyeon Kim`, `Developer`, `Writer`, `Personal Blog`, 'Software Developer', `Projects`,`Student`,`Tech Enthusiast`, `Kim`, `Huiyeon`]} />
             <Header />
             <Landing imageMap={imageMap}/>

@@ -3,7 +3,7 @@ import SkillCard from './SkillCard'
 
 const SkillSection = () => {
     return (
-        <section style={{width:`calc(100vw - (100vw - 100%))`, minHeight:`100vh`, background:`whitesmoke`, paddingBottom:`70px`}}>
+        <section style={{width:`calc(100vw - (100vw - 100%))`, minHeight:`100vh`, background:`whitesmoke`, paddingBottom:`70px`, paddingTop:30}}>
             <div className="container">
                 <h2 style={{color:`#192bc2`, fontSize:`2.8em`,fontFamily:`-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"`, fontWeight:`bold`, margin:0,padding:0, marginBottom:`1.45rem`,textRendering:`optimizeLegibility`, lineHeight:1.1}} className="center-align">My Skills;</h2>
                 <div className="row" style={{marginTop:50, marginBottom:0}}>

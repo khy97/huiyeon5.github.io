@@ -1,15 +1,16 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade'
+import Img from 'gatsby-image'
 
-const AboutMe = () => {
+const AboutMe = ({imageMap}) => {
     return (
-        <section style={{width:`calc(100vw - (100vw - 100%))`, minHeight:`100vh`, background:`whitesmoke`, paddingTop:`65px`}} id="about">
+        <section style={{width:`calc(100vw - (100vw - 100%))`, minHeight:`90vh`, background:`whitesmoke`, paddingTop:`65px`}} id="about">
             <div className="container">
                 <h2 style={{color:`#192bc2`, fontSize:`2.8em`,fontFamily:`-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"`, fontWeight:`bold`, margin:0,padding:0, marginBottom:`1.45rem`,textRendering:`optimizeLegibility`, lineHeight:1.1}} className="center-align">About Me;</h2>
                 <div className="row" style={{marginTop:50, marginBottom:0}}>
                     <Fade left>
                         <div className="col s12 m12 l5">
-                            <img src={require('../images/Huiyeon Kim.jpg')} alt="Huiyeon Kim" className="responsive-img" style={{borderRadius:4, boxShadow:`0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)`}}/>
+                            <Img fluid={imageMap['Huiyeon Kim.jpg']} style={{borderRadius:4, boxShadow:`0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)`, marginBottom:30}}/>
                         </div>
                     </Fade>
                     <Fade right>

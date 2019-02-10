@@ -17,7 +17,7 @@ const LandingIcons = ({black}) => {
     })
     if(black) {
         return (
-            <animated.div style={{...props, height: `100%`, display:`flex`, justifyContent:`space-around`, alignItems:`center`}} className="col s12 l5 right" >
+            <animated.div style={{...props, height: `100%`, display:`flex`, justifyContent:`space-around`, alignItems:`center`,overflowY:`hidden`}} className="col s12 l5 right" >
                 <FontAwesomeIcon icon={['fab', 'github']} style={{color:`#192bc2`, fontSize:30}} className="landingIcon" onClick={() => {
                     window.open('https://github.com/huiyeon5', "_blank")
                 }}/>

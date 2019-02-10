@@ -6,11 +6,11 @@ import Img from 'gatsby-image'
 const Project = ({left, title, info, skills, weblink, githublink, fluid}) => {
     if(left) {
         return (
-            <div className="row" style={{marginTop:120}}>
+            <div className="row" style={{marginTop:100}}>
                 <Fade left>
                     <div className={`col s12 m12 l6 left`}>
                         {/* <img src={require(`../images/${title}.png`)} alt={title} className="responsive-img"/> */}
-                        <Img fluid={fluid} />
+                        <Img fluid={fluid} style={{marginBottom:10}}/>
                     </div>
                 </Fade>
                 <Fade right>
@@ -22,10 +22,11 @@ const Project = ({left, title, info, skills, weblink, githublink, fluid}) => {
         )
     } else {
         return (
-            <div className="row" style={{marginTop:120}}>
+            <div className="row" style={{marginTop:100}}>
                 <Fade right>
                     <div className={`col s12 m12 l6 right`}>
-                        <img src={require(`../images/${title}.png`)} alt={title} className="responsive-img"/>
+                        <Img fluid={fluid} style={{marginBottom:10}}/> 
+                        {/* <img src={require(`../images/${title}.png`)} alt={title} className="responsive-img"/> */}
                     </div>
                 </Fade>
                 <Fade left>

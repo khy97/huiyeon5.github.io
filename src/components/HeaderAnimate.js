@@ -12,7 +12,7 @@ export default function HeaderAnimate() {
         delay:500
     })
     return (
-        <header id="header" style={{position:`absolute`, width:`calc(100vw - (100vw - 100%))`, top:0, zIndex:1000000000}}>
+        <header id="header" style={{position:`absolute`, width:`calc(100vw - (100vw - 100%))`, top:0, zIndex:1000000000,overflowY:`hidden`}}>
             <nav style={{boxShadow:`none`, background:`transparent`, transition:`all 0.2s ease`}} id="navbar">
                 <animated.div style={props}>
                     <div className="nav-wrapper container">

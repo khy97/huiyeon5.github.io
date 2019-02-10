@@ -1,9 +1,10 @@
 import React from "react"
-import M from 'materialize-css';
+// import M from 'materialize-css';
 import HeaderAnimate from './HeaderAnimate';
 
 class Header extends React.Component {
-    componentDidMount() {
+    async componentDidMount() {
+        const M = await import('materialize-css')
         var elems = document.querySelectorAll('.sidenav');
         M.Sidenav.init(elems);
     }

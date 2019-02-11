@@ -27,12 +27,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Huiyeon Kim: Developer, Tech Enthusiast`,
+        short_name: `Huiyeon Kim`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
+        background_color: `#192bc2`,
+        theme_color: `#192bc2`,
+        display: `standalone`,
         icon: `src/images/Icon.png`, // This path is relative to the root of the site.
       },
     },

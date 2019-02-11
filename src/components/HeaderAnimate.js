@@ -21,7 +21,7 @@ export default function HeaderAnimate() {
                                 behavior:'smooth'
                             })
                             
-                        }} className="brand-logo headerChange" style={{fontFamily:`"Covered By Your Grace"`, color:`white`, transition:`all 0.2s ease`, fontSize:25}}>Huiyeon Kim;</a>
+                        }} className="brand-logo headerChange" style={{fontFamily:`"Arial"`,fontStyle:`italic`, color:`white`, transition:`all 0.2s ease`, fontSize:25}}>Huiyeon Kim;</a>
                         <a href="javascript:void(0)" onClick={() => {
                             document.getElementById("header").scrollIntoView({
                                 behavior:'smooth'

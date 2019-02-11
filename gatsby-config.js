@@ -6,14 +6,6 @@ module.exports = {
     siteUrl:`https://huiyeonkim.com`
   },
   plugins: [
-    {
-        resolve: `gatsby-plugin-google-fonts`,
-        options: {
-          fonts: [
-            `Covered By Your Grace`,
-          ]
-        }
-    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

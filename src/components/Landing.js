@@ -11,7 +11,7 @@ export default function Landing({imageMap}) {
         config: {
             friction:18,
         },
-        delay:750
+        delay:350
     })
     return (
         <section style={{height:`100vh`, width:`calc(100vw - (100vw - 100%))`,  position:`relative`, overflowY:`hidden`}}>

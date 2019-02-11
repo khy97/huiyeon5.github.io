@@ -13,7 +13,7 @@ const LandingIcons = ({black}) => {
         config: {
             friction:18
         },
-        delay:1000
+        delay:500
     })
     if(black) {
         return (

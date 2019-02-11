@@ -1,6 +1,11 @@
 import React from "react"
-import Icon from '@material-ui/core/Icon';
+// import Icon from '@material-ui/core/Icon';
+import {library} from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { useSpring, animated } from 'react-spring'
+
+library.add(faBars)
 
 export default function HeaderAnimate() {
     const props = useSpring({ 
@@ -9,7 +14,7 @@ export default function HeaderAnimate() {
         config: {
             friction:18
         },
-        delay:500
+        delay:200
     })
     return (
         <header id="header" style={{position:`absolute`, width:`calc(100vw - (100vw - 100%))`, top:0, zIndex:1000000000,overflowY:`hidden`}}>
@@ -28,7 +33,7 @@ export default function HeaderAnimate() {
                             })
                             
                         }} className="sidenav-trigger valign-wrapper" data-target="mobile-menu">
-                            <Icon style={{ fontSize: 30, color:`white` }} className="vertical-align headerChange">menu</Icon>
+                            <FontAwesomeIcon style={{ fontSize: 30, color:`white` }} icon={['fas', 'bars']} className="vertical-align headerChange"></FontAwesomeIcon>
                         </a>
                         <ul className="right hide-on-med-and-down">
                             <li><a  className="sidenav-close" href="javascript:void(0)" onClick={() => {

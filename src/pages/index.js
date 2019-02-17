@@ -17,7 +17,7 @@ const IndexPage = ({data}) => {
     })
     return (
         <div style={{position:`relative`, overflowY:`hidden`}}>
-            <SEO title="Home" keywords={[`Huiyeon Kim`, `Developer`, `Writer`, `Personal Blog`, 'Software Developer', `Projects`,`Student`,`Tech Enthusiast`, `Kim`, `Huiyeon`]} />
+            <SEO title="Huiyeon Kim" keywords={[`Huiyeon Kim`, `Developer`, `Writer`, `Personal Blog`, 'Software Developer', `Projects`,`Student`,`Tech Enthusiast`, `Kim`, `Huiyeon`]} />
             <Header />
             <Landing imageMap={imageMap}/>
             <ProjectSection imageMap={imageMap}/>

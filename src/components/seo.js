@@ -39,6 +39,14 @@ function SEO({ description, lang, meta, keywords, title }) {
                 content: require('../images/Huiyeon Kim.jpg'),
               },
               {
+                property: `og:url`,
+                content: 'https://huiyeonkim.com',
+              },
+              {
+                property: `og:site_name`,
+                content: 'Huiyeon Kim',
+              },
+              {
                 name: `twitter:card`,
                 content: `summary`,
               },
@@ -53,6 +61,14 @@ function SEO({ description, lang, meta, keywords, title }) {
               {
                 name: `twitter:description`,
                 content: metaDescription,
+              },
+              {
+                property: `twitter:image`,
+                content: require('../images/Huiyeon Kim.jpg'),
+              },
+              {
+                property: `twitter:image`,
+                content: 'https://huiyeonkim.com',
               },
             ]
               .concat(

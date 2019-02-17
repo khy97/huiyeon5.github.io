@@ -1,6 +1,6 @@
 import React from  'react'
-// import LandingIcons from './LandingIcons';
-// import { useSpring, animated } from 'react-spring'
+import LandingIcons from './LandingIcons';
+import { useSpring, animated } from 'react-spring'
 import './Landing.css'
 // import Img from 'gatsby-image'
 

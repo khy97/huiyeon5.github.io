@@ -36,7 +36,7 @@ function SEO({ description, lang, meta, keywords, title, image }) {
               },
               {
                 property: `og:image`,
-                content: image,
+                content: `https://huiyeonkim.com${image}`,
               },
               {
                 property: `og:url`,

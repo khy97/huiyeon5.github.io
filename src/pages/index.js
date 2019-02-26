@@ -12,12 +12,16 @@ import { graphql } from 'gatsby';
 const IndexPage = ({data}) => {
     const imageList = data.allFile.edges;
     let imageMap = {}
+    let seoImage = "";
     imageList.forEach(image => {
+        if(image.node.childImageSharp.fluid.originalName === "Huiyeon Kim.jpg") {
+            seoImage = image.node.publicURL
+        }
         imageMap[image.node.childImageSharp.fluid.originalName] = image.node.childImageSharp.fluid
     })
     return (
         <div style={{position:`relative`, overflowY:`hidden`}}>
-            <SEO title="Huiyeon Kim" keywords={[`Huiyeon Kim`, `Developer`, `Writer`, `Personal Blog`, 'Software Developer', `Projects`,`Student`,`Tech Enthusiast`, `Kim`, `Huiyeon`]} />
+            <SEO title="Huiyeon Kim" keywords={[`Huiyeon Kim`, `Developer`, `Writer`, `Personal Blog`, 'Software Developer', `Projects`,`Student`,`Tech Enthusiast`, `Kim`, `Huiyeon`]} image={seoImage}/>
             <Header />
             <Landing imageMap={imageMap}/>
             <ProjectSection imageMap={imageMap}/>
@@ -41,6 +45,7 @@ export const ImageQuery = graphql`
                         originalName
                     }
                 }
+                publicURL
             }
         }
     }

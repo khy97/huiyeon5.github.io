@@ -1,3 +1,10 @@
+.backgroundLanding {
+    background-image: url('../images/test-bg.png');
+    background-size: cover;
+    background-position: top center;
+    background-color: #298ef6;
+}
+
 .landingIcon {
     cursor: pointer;
     transition: all 0.3s ease;

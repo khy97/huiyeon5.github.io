@@ -16,7 +16,7 @@ export default function Landing({imageMap}) {
     return (
         <section style={{height:`100vh`, width:`calc(100vw - (100vw - 100%))`,  position:`relative`, overflowY:`hidden`}}>
             {/* <Img fluid={imageMap['landing.jpg']} style={{position:`absolute`, width:`100%`, height:`100%`}}/> */}
-            <div style={{position:`absolute`, background:`linear-gradient(90deg, rgba(20,136,204,0.9), rgba(43,50,178,0.9))`, width:`100%`, height:`100%`}}>
+            <div className="backgroundLanding" style={{position:`absolute`, width:`100%`, height:`100%`}}>
                 <animated.div style={{...props, display:`flex`, flexDirection:`column`, justifyContent:`center`, height:`100%`, position:`relative`}}>
                     <div style={{position:`relative`, display:`flex`, flexDirection:`column`, justifyContent:`center`, height:`100%`}} className="container">
                         <h1 style={{color:`white`, fontFamily:`-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"`, wordWrap:`normal`, margin:0, padding:0, marginBottom:`1.45rem`, fontWeight:`bold`, textRendering:`optimizeLegibility`, fontSize:`2.25rem`, lineHeight:1.1}}>Huiyeon Kim ; Developer, Tech Enthusiast and a Writer ;</h1>

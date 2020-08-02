@@ -1,52 +1,46 @@
-import React from "react"
-import Header from "../components/header"
-import Landing from "../components/Landing"
-import SEO from "../components/seo"
-import ProjectSection from '../components/ProjectSection'
-import AboutMe from '../components/AboutMe'
-import SkillSection from '../components/SkillSection'
-import ContactMe from '../components/ContactMe'
-import { graphql } from 'gatsby';
-// import "../components/layout.css"
+import React, { useState, useEffect } from 'react'
+import Layout from '../components/layout'
+import Panel from '../components/Panel'
+import Content from '../components/content'
+import '../styles/index.css'
 
-const IndexPage = ({data}) => {
-    const imageList = data.allFile.edges;
-    let imageMap = {}
-    let seoImage = "";
-    imageList.forEach(image => {
-        if(image.node.childImageSharp.fluid.originalName === "Huiyeon Kim.jpg") {
-            seoImage = image.node.publicURL
+const ResumeContext = React.createContext();
+
+const IndexPage = () => {
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState({})
+
+  useEffect(() => {
+    const url = `https://gitconnected.com/v1/portfolio/huiyeon5`;
+    const fetchData = async () => {
+      try {
+        const resumeData = await fetch(url)
+        const output = await resumeData.json()
+        setData(output)
+        setLoading(false)
+      } catch (e) {
+        if (e) {
+          console.log(e.message, 'Try updating the API key in App.js')
         }
-        imageMap[image.node.childImageSharp.fluid.originalName] = image.node.childImageSharp.fluid
-    })
-    return (
-        <div style={{position:`relative`, overflowY:`hidden`}}>
-            <SEO title="Huiyeon Kim" keywords={[`Huiyeon Kim`, `Developer`, `Writer`, `Personal Blog`, 'Software Developer', `Projects`,`Student`,`Tech Enthusiast`, `Kim`, `Huiyeon`]} image={seoImage}/>
-            <Header />
-            <Landing imageMap={imageMap}/>
-            <ProjectSection imageMap={imageMap}/>
-            <AboutMe imageMap={imageMap}/>
-            <SkillSection />
-            <ContactMe />
-        </div>
-    )
+      }
+    }
+    fetchData();
+  }, [])
+
+
+  return (
+    <Layout>
+      <ResumeContext.Provider value={{
+        loading,
+        data
+      }}>
+        {/* <SEO title={"Home"} keywords={[`LearnWars`, `Blog`, `Learn`, `Teach`, `Tech`,"Learn Wars", "Wars", "Blog","learningwars","learnwars","warslearn","learning","Teach"]} image={require('../images/LearnWars.png')} /> */}
+        <Panel />
+        <Content />
+      </ResumeContext.Provider>
+    </Layout>
+  )
 }
 
+export { ResumeContext }
 export default IndexPage
-
-export const ImageQuery = graphql`
-  query ImageQuery {
-    allFile {
-        edges {
-            node {
-                childImageSharp {
-                    fluid(maxWidth:2600) {
-                        ...GatsbyImageSharpFluid
-                        originalName
-                    }
-                }
-                publicURL
-            }
-        }
-    }
-}`

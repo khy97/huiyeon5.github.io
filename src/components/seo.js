@@ -1,9 +1,9 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { StaticQuery, graphql } from "gatsby"
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import { StaticQuery, graphql } from 'gatsby'
 
-function SEO({ description, lang, meta, keywords, title, image }) {
+function SEO({ description, lang, meta, keywords, title, image, path }) {
   return (
     <StaticQuery
       query={detailsQuery}
@@ -31,20 +31,20 @@ function SEO({ description, lang, meta, keywords, title, image }) {
                 content: metaDescription,
               },
               {
+                property: `og:image`,
+                content: image,
+              },
+              {
                 property: `og:type`,
                 content: `website`,
               },
               {
-                property: `og:image`,
-                content: `https://huiyeonkim.com${image}`,
-              },
-              {
                 property: `og:url`,
-                content: 'https://huiyeonkim.com',
+                content: path ? `https://learnwars.com${path}` : `https://learnwars.com`,
               },
               {
                 property: `og:site_name`,
-                content: 'Huiyeon Kim',
+                content: `Learn Wars`,
               },
               {
                 name: `twitter:card`,
@@ -63,12 +63,12 @@ function SEO({ description, lang, meta, keywords, title, image }) {
                 content: metaDescription,
               },
               {
-                property: `twitter:image`,
+                name: `twitter:image`,
                 content: image,
               },
               {
-                property: `twitter:image`,
-                content: 'https://huiyeonkim.com',
+                name: `twitter:site`,
+                content: path ? `https://learnwars.com${path}` : `https://learnwars.com`,
               },
             ]
               .concat(
@@ -101,16 +101,17 @@ SEO.propTypes = {
   title: PropTypes.string.isRequired,
 }
 
-export default SEO
 
 const detailsQuery = graphql`
-  query DefaultSEOQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-      }
+query DefaultSEOQuery {
+  site {
+    siteMetadata {
+      title
+      description
+      author
     }
   }
+}
 `
+
+export default SEO

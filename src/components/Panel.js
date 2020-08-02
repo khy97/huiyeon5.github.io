@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { StaticQuery, graphql } from 'gatsby'
 
 import ParticlesWrapper from './ParticlesWrapper';
 import Icon from './Icons';
 import TooltipIcon from './TooltipIcon';
-
+import { ResumeContext } from '../pages/index';
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { faMapMarkerAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub, faMedium } from '@fortawesome/free-brands-svg-icons';
 
 import * as S from "../styles/panel.styles";
 
 const Panel = () => {
+  const { loading, data } = useContext(ResumeContext);
+
   return (
     <StaticQuery
       query={imageQuery}
@@ -18,7 +21,13 @@ const Panel = () => {
         return (
           <S.Panel>
             <S.IntroductionWrapper>
-              <S.PanelImage fluid={data.file.childImageSharp.fluid} />
+              {!loading ?
+                <S.PanelImage fluid={data.file.childImageSharp.fluid} />
+                :
+                <SkeletonTheme color="#181d44" highlightColor="#2c3184">
+                  <Skeleton circle={true} height={150} width={150} />
+                </SkeletonTheme>
+              }
               <S.Introduction>
                 <S.H1>Huiyeon Kim</S.H1>
                 <S.H2>Site Reliability Engineer @ Goldman Sachs</S.H2>

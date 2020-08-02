@@ -446,3 +446,12 @@ export const ButtonGroup = styled.div`
         flex-direction: column;
     }
 `
+export const ReadMore = styled.button`
+    border:none;
+    background: none;
+    color: #2a2f7e;
+    font-size:14px;
+    font-style:italic;
+    font-weight:500;
+    cursor pointer;
+`;

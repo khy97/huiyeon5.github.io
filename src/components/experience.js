@@ -1,9 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Skeleton from 'react-loading-skeleton';
 
 import * as S from "../styles/content.styles";
 
 const Experience = ({ loading, title, subTitle, startDate, endDate, location, details, dExist, dCount, noMargin }) => {
+    const [full, setFull] = useState([])
+    const [partial, setPartial] = useState("")
+    const [open, setOpen] = useState(false)
+    const [need, setNeed] = useState(false)
+
+    useEffect(() => {
+        if (dExist && !loading) {
+            let deets = formatDetail(details)
+            if (deets.length >= 3) {
+                setFull(deets)
+                setPartial(deets.slice(0, 2))
+                setOpen(false)
+                setNeed(true)
+            } else {
+                setFull(deets)
+                setNeed(false)
+            }
+        }
+    }, [loading])
+
     const formatDetail = (summary) => {
         const lines = summary.split("\n");
         let result = [];
@@ -21,6 +41,7 @@ const Experience = ({ loading, title, subTitle, startDate, endDate, location, de
         }
         return result;
     }
+
 
     const formatDate = (start, end = undefined) => {
         let s = "";
@@ -74,6 +95,7 @@ const Experience = ({ loading, title, subTitle, startDate, endDate, location, de
                 break;
         }
     }
+
     return (
         <S.Experience noMargin={noMargin}>
             <S.JobTitle>{!loading ? title : <Skeleton />}</S.JobTitle>
@@ -84,7 +106,8 @@ const Experience = ({ loading, title, subTitle, startDate, endDate, location, de
                 {!loading ? location : <Skeleton />}
             </S.ExpLocation>
             <S.Detail>
-                {loading ? <Skeleton count={dCount} /> : dExist ? formatDetail(details) : null}
+                {loading ? <Skeleton count={dCount} /> : !need ? full : open ? full : partial}
+                {loading ? <Skeleton count={1} /> : !need ? null : !open ? <S.ReadMore onClick={() => setOpen(!open)}>Read More</S.ReadMore> : <S.ReadMore onClick={() => setOpen(!open)}>Read Less</S.ReadMore>}
             </S.Detail>
         </S.Experience>
     )

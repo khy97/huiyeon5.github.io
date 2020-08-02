@@ -2,18 +2,16 @@ import React, { useContext } from 'react';
 import { StaticQuery, graphql } from 'gatsby'
 
 import ParticlesWrapper from './ParticlesWrapper';
-import Icon from './Icons';
-import TooltipIcon from './TooltipIcon';
 import { ResumeContext } from '../pages/index';
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import { faMapMarkerAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin, faGithub, faMedium } from '@fortawesome/free-brands-svg-icons';
+import { MdLocationOn } from 'react-icons/md';
+import { GrLinkedin, GrGithub, GrMedium } from 'react-icons/gr'
+import { IconContext } from "react-icons";
 
 import * as S from "../styles/panel.styles";
 
 const Panel = () => {
-  const { loading, data } = useContext(ResumeContext);
-
+  const { loading } = useContext(ResumeContext);
   return (
     <StaticQuery
       query={imageQuery}
@@ -31,13 +29,23 @@ const Panel = () => {
               <S.Introduction>
                 <S.H1>Huiyeon Kim</S.H1>
                 <S.H2>Site Reliability Engineer @ Goldman Sachs</S.H2>
-                <Icon size={13} icon={faMapMarkerAlt} text={"Singapore"} />
+                <div style={{ display: "flex", marginBottom: 20 }}>
+                  <IconContext.Provider value={{ color: "white", size: 20 }}>
+                    <MdLocationOn />
+                  </IconContext.Provider>
+                  <span style={{ marginLeft: 5 }}>Singapore</span>
+                </div>
                 <S.Tagline>Welcome! I'm a Software Engineer, Technical Writer and a Tutor. </S.Tagline>
                 <S.ContactInformation>
-                  <TooltipIcon place={"top"} overlay={'Email Me'} id={'EmailMe'} size={22} click={true} icon={faEnvelope} link={'https://google.com'} />
-                  <TooltipIcon place={"top"} overlay={'Connect on LinkedIn'} id={'LinkedIn'} size={22} click={true} icon={faLinkedin} link={'https://www.linkedin.com/in/huiyeonkim/'} />
-                  <TooltipIcon place={"top"} overlay={'Check my Github'} id={'github'} size={22} click={true} icon={faGithub} link={'github.com/huiyeon5/'} />
-                  <TooltipIcon place={"top"} overlay={'Read my blogs'} id={'medium'} size={22} click={true} icon={faMedium} link={'https://medium.com/techfront'} />
+                  <IconContext.Provider value={{ color: "white", size: 24, style: { cursor: `pointer` } }}>
+                    <GrLinkedin onClick={() => window.open('https://www.linkedin.com/in/huiyeonkim/', "_blank")} />
+                  </IconContext.Provider>
+                  <IconContext.Provider value={{ color: "white", size: 24, style: { cursor: `pointer` } }}>
+                    <GrGithub onClick={() => window.open('github.com/huiyeon5/', "_blank")} />
+                  </IconContext.Provider>
+                  <IconContext.Provider value={{ color: "white", size: 24, style: { cursor: `pointer` } }}>
+                    <GrMedium onClick={() => window.open('https://medium.com/techfront', "_blank")} />
+                  </IconContext.Provider>
                 </S.ContactInformation>
               </S.Introduction>
             </S.IntroductionWrapper>

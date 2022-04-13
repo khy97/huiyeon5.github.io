@@ -1,4 +1,4 @@
 [[redirects]]
-  from = "https://festive-kilby-9f48b9.netlify.com/*"
-  to = "https://huiyeonkim.com/:splat 301!"
+  from = "kimhuiyeon.netlify.app/*"
+  to = "https://kimhuiyeon.com/:splat 301!"
   force = true

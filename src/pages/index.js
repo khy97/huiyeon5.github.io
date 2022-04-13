@@ -4,6 +4,7 @@ import Panel from "../components/Panel";
 import SEO from "../components/seo";
 import Content from "../components/content";
 import "../styles/index.css";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const ResumeContext = React.createContext();
 

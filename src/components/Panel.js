@@ -29,7 +29,7 @@ const Panel = () => {
               )}
               <S.Introduction>
                 <S.H1>Huiyeon Kim</S.H1>
-                <S.H2>Site Reliability Engineer @ Goldman Sachs</S.H2>
+                <S.H2>Software Engineer, SRE @ Goldman Sachs</S.H2>
                 <div style={{ display: "flex", marginBottom: 20 }}>
                   <IconContext.Provider value={{ color: "white", size: 20 }}>
                     <MdLocationOn />
